@@ -12,8 +12,8 @@ export default function Home() {
           height={372}
           priority
         />
-        <p className="text-center w-full">DESIGN.CODE.MARKETING </p>
-        <p className="text-center w-full">Coming Soon</p>
+        <p className="text-center w-full">Business by Design & Beyond </p>
+        <p className="text-center w-full">Coming Soon.....</p>
 
       
       </main>
