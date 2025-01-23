@@ -1,25 +1,54 @@
+"use client";
+
 import Image from "next/image";
+import styled from "styled-components";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-       
+    <PageWrapper>
+      <Header>
+        <HeaderLogoImg src="/SOIE SMALL LOGO WTH TXT MARK.svg" alt="Soie & Scale Logo"/>
+      </Header>
+      <HeroContent>
+        <HeroImage
           src="/Soiebiglogo.svg"
           alt="Soie logo"
-          width={942}
-          height={372}
-          priority
-        />
-        <p className="text-center w-full">Business by Design & Beyond </p>
-        <p className="text-center w-full">Coming Soon.....</p>
-
-      
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+         
+        />  
+      </HeroContent>
+      <Content>
+      <p>Business by Design & Beyond </p>
+      <p>Coming Soon.....</p>
+      </Content>
+     
+      <footer>
        
       </footer>
-    </div>
+    </PageWrapper>
   );
 }
+
+const PageWrapper = styled.div`
+margin:0px auto;
+`
+const Header = styled.div`
+padding:24px 160px 24px 160px;
+`
+const HeaderLogoImg = styled.img`
+width:251px;
+height:50px;
+`
+const HeroContent = styled.div`
+display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:120px 0;
+
+`
+const HeroImage= styled.img`
+width:942px;
+height:372px;
+`
+const Content= styled.div`
+text-align: center;
+`
