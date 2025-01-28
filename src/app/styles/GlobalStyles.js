@@ -17,11 +17,14 @@ const GlobalStyle = createGlobalStyle`
   body {
     color: var(--foreground);
     background: var(--background);
-    font-family: 'DM Sans', Helvetica, sans-serif;
+    font-family: 'Inter', Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
+    a{
+    color:#B9B173;
+    }
 `;
 
 export default GlobalStyle;
