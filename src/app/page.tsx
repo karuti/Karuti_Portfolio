@@ -2,13 +2,22 @@
 
 import styled from "styled-components";
 import Chip from '../app/components/Chip.js';
+import Image from 'next/image';
+
 
 
 export default function Home() {
   return (
     <PageWrapper>
       <Header>
-       <a href="https://karuti.co.ke/"> <HeaderLogoImg src="/kARUTI LOGO LIGHT.svg" alt="Karuti Logo"/></a>
+       <a href="https://karuti.co.ke/"> 
+       <Image 
+       
+       src="/kARUTI LOGO LIGHT.svg" 
+       alt="Karuti Logo"
+       height={50}
+
+/></a>
       </Header>
       <HeroContent>
         <MainIntro>
@@ -23,44 +32,50 @@ export default function Home() {
           <HorizontaLine></HorizontaLine>
           <Peek>
 <BasedIn>Based in Nairobi Kenya</BasedIn>
-<Showcase><SelectedWorkTxt>See selected works</SelectedWorkTxt><img src="/Arrow Down Circle Icon 1Inverse.svg"/></Showcase>
+<Showcase><SelectedWorkTxt>See selected works</SelectedWorkTxt><Image alt="" src="/Arrow Down Circle Icon 1Inverse.svg"/></Showcase>
           </Peek>
       </HeroContent>
      
      <WorkShowcase>
     
       <CardContainer>
-        <ShowCaseImage><img src="/Cloud.jpeg"/></ShowCaseImage>
+        <ShowCaseImage><Image alt="Showcase Image" src="/Cloud.jpeg"/></ShowCaseImage>
         <ShowCaseContent>
           <CategoryChip> <Chip>Product Management</Chip></CategoryChip>
           <ItemDate>09 JAN 2025</ItemDate>
           <ItemTitle>Launching a new EB2B mobile app in a new market </ItemTitle>
         </ShowCaseContent>
-        <ShowCaseCTA> <a href="/detail"><img src="/Open Arrow Icon.svg"/></a></ShowCaseCTA>
+        <ShowCaseCTA> <a href="/detail"><Image alt="" src="/Open Arrow Icon.svg"/></a></ShowCaseCTA>
       </CardContainer>
       <CardContainer>
-        <ShowCaseImage><img src="/Cloud.jpeg"/></ShowCaseImage>
+        <ShowCaseImage><Image alt="Showcase Image" src="/Cloud.jpeg"/></ShowCaseImage>
         <ShowCaseContent>
           <CategoryChip> <Chip>Product Management</Chip></CategoryChip>
           <ItemDate>09 JAN 2025</ItemDate>
           <ItemTitle>Launching a new EB2B mobile app in a new market </ItemTitle>
         </ShowCaseContent>
-        <ShowCaseCTA><img src="/Open Arrow Icon.svg"/></ShowCaseCTA>
+        <ShowCaseCTA><Image alt="See selected work" src="/Open Arrow Icon.svg"/></ShowCaseCTA>
       </CardContainer>
       <CardContainer>
-        <ShowCaseImage><img src="/Cloud.jpeg"/></ShowCaseImage>
+        <ShowCaseImage><Image alt="Showcase Image" src="/Cloud.jpeg"/></ShowCaseImage>
         <ShowCaseContent>
           <CategoryChip> <Chip>Product Management</Chip></CategoryChip>
           <ItemDate>09 JAN 2025</ItemDate>
           <ItemTitle>Launching a new EB2B mobile app in a new market </ItemTitle>
         </ShowCaseContent>
-        <ShowCaseCTA><img src="/Open Arrow Icon.svg"/></ShowCaseCTA>
+        <ShowCaseCTA><Image alt="See selected work" src="/Open Arrow Icon.svg"/></ShowCaseCTA>
       </CardContainer>
      </WorkShowcase>
      
      <Footer>
 <FooterCTA>
-<HeaderLogoImg src="/kARUTI LOGO LIGHT.svg" alt="Karuti Logo"/>
+<Image 
+       
+       src="/kARUTI LOGO LIGHT.svg" 
+       alt="Karuti Logo"
+       height={50}
+
+/>
 
 </FooterCTA>
 <Copyright>Copyright© 2025 Karuti.co.ke All Rights Reserved.</Copyright>
@@ -79,12 +94,7 @@ position: sticky;
   z-index: 100; 
   background-color:#152314;
 `
-const HeaderLogoImg = styled.img`
-width:auto;
-height:50px;
-padding:0;
 
-`
 const HeroContent = styled.div`
 
   padding:120px 0 0 0;

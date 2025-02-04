@@ -3,16 +3,18 @@
 import styled from "styled-components";
 import FloatingButton from "../components/FloatingButton.js";
 import ImageGallery from '../components/ImageGallery';
+import Image from 'next/image';
 
 
 
 export default function Detail() {
+
   const images = [
-    '/Cloud.jpeg',
-    '/Cloud.jpeg',
-    '/Cloud.jpeg',
-    '/Cloud.jpeg',
-    '/Cloud.jpeg'
+    { src: '/Cloud.jpeg', alt: 'A beautiful view of clouds in the sky' },
+    { src: '/Cloud.jpeg', alt: 'Clouds in the sky - Image 1' },
+    { src: '/Cloud.jpeg', alt: 'Clouds in the sky - Image 2' },
+    { src: '/Cloud.jpeg', alt: 'Clouds in the sky - Image 3' },
+    { src: '/Cloud.jpeg', alt: 'Clouds in the sky - Image 4' },
   ];
   return (
     <PageWrapper>
@@ -26,7 +28,7 @@ export default function Detail() {
         <FeatureDescription>Super Follows are paid account subscriptions on Twitter where 
           fans can pay to subscribe to a range of benefits including exclusive content, community, access, recognition and deals plus discounts. 
         </FeatureDescription>
-        <FeatureImage><img src="/Cloud.jpeg"/></FeatureImage>
+        <FeatureImage><Image  alt="Feature Image" src="/Cloud.jpeg"/></FeatureImage>
       </FeaturedArea>
       <DetailArea>
         <DetailContent>
@@ -48,7 +50,7 @@ and most do not have laptops making it difficult to
 access the reporting which we have provided for them on the web-app.
 </DetailDescription>
       </Infoshowcasetext>
-      <Infoshowcaseimage><img src="/Cloud.jpeg"/></Infoshowcaseimage>
+      <Infoshowcaseimage><Image  alt="Feature Image" src="/Cloud.jpeg"/></Infoshowcaseimage>
       </Infoshowcasecontainer>
       <GalleryWrapper>   <ImageGallery images={images} /></GalleryWrapper>
    

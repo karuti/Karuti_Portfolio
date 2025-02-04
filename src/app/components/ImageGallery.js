@@ -1,14 +1,17 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import Image from 'next/image';
 import styled from 'styled-components';
 
 const GalleryContainer = styled.div`
-  max-width: 1280px; /* Total width of the gallery */
+  max-width: 1280px;
   margin: 0 auto;
   padding: 20px;
 `;
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr; /* Large image takes 3 parts, others take 1 part each */
+  grid-template-columns: 3fr 1fr 1fr;
   gap: 20px;
 
   @media (max-width: 768px) {
@@ -18,38 +21,29 @@ const Grid = styled.div`
 `;
 
 const MainImage = styled.div`
-  grid-column: 1 / 2; /* Large image spans the first column */
-  height: 600px; /* Fixed height for the large image */
- 
+  grid-column: 1 / 2;
+  height: 600px;
+  position: relative;
+
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image fits without distortion */
     border-radius: 12px;
-   
   }
 `;
 
 const SmallImage = styled.div`
   display: grid;
-  grid-template-rows: repeat(2, 290px); /* Two equal rows */
+  grid-template-rows: repeat(2, 290px);
   gap: 20px;
-  height: 100%; /* Match the height of the grid */
-  
+  height: 100%;
 
   div {
-    height: 100%; /* Ensure each child div takes up equal height */
-    display: flex; /* Ensure the image inside is properly aligned */
-   
+    height: 100%;
+    position: relative;
   }
 
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image fits without distortion */
     border-radius: 12px;
   }
-
 `;
 
 const ImageGallery = ({ images }) => {
@@ -58,26 +52,56 @@ const ImageGallery = ({ images }) => {
   return (
     <GalleryContainer>
       <Grid>
+        {/* Main Image */}
         <MainImage>
-          <img src={images[0]} alt="Main view" />
+          <Image
+            src={images[0].src}
+            alt={images[0].alt}
+            fill
+            style={{ objectFit: 'cover', borderRadius: '12px' }}
+          />
         </MainImage>
+
+        {/* First Small Image Column */}
         <SmallImage>
           {images.slice(1, 3).map((image, index) => (
             <div key={index}>
-              <img src={image} alt={`View ${index + 1}`} />
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                style={{ objectFit: 'cover', borderRadius: '12px' }}
+              />
             </div>
           ))}
         </SmallImage>
+
+        {/* Second Small Image Column */}
         <SmallImage>
           {images.slice(3, 5).map((image, index) => (
             <div key={index}>
-              <img src={image} alt={`View ${index + 3}`} />
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                style={{ objectFit: 'cover', borderRadius: '12px' }}
+              />
             </div>
           ))}
         </SmallImage>
       </Grid>
     </GalleryContainer>
   );
+};
+
+// Define PropTypes for the component
+ImageGallery.propTypes = {
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      alt: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default ImageGallery;
