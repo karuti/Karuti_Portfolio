@@ -17,7 +17,7 @@ export default function Detail() {
   return (
     <PageWrapper>
        <Header>
-       <a href="https://karuti.co.ke/">  <HeaderLogoImg src="/KARUTI LOGO LIGHT.svg" alt="Karuti Logo"/></a>
+       <a href="https://karuti.co.ke/">  <HeaderLogoImg src="/kARUTI LOGO LIGHT.svg" alt="Karuti Logo"/></a>
        
       </Header>
       <FeaturedArea>
