@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Preload your custom font */}
         <link
           rel="preload"
-          href="/font/GeneralSans-Regular.woff2"
+          href="/fonts/GeneralSans-Regular.woff2"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
