@@ -1,17 +1,27 @@
 "use client";
 
 import styled from "styled-components";
+import FloatingButton from "../components/FloatingButton.js";
+import ImageGallery from '../components/ImageGallery';
 
 
 
 export default function Detail() {
+  const images = [
+    '/Cloud.jpeg',
+    '/Cloud.jpeg',
+    '/Cloud.jpeg',
+    '/Cloud.jpeg',
+    '/Cloud.jpeg'
+  ];
   return (
     <PageWrapper>
        <Header>
-        <HeaderLogoImg src="/SOIE SMALL LOGO WTH TXT MARK.svg" alt="Soie & Scale Logo"/>
+       <a href="https://karuti.co.ke/">  <HeaderLogoImg src="/KARUTI LOGO LIGHT.svg" alt="Karuti Logo"/></a>
+       
       </Header>
       <FeaturedArea>
-        <FeatureTitle>Super Follows
+        <FeatureTitle>Making Bumble inclusive for every gender
         </FeatureTitle>
         <FeatureDescription>Super Follows are paid account subscriptions on Twitter where 
           fans can pay to subscribe to a range of benefits including exclusive content, community, access, recognition and deals plus discounts. 
@@ -19,20 +29,42 @@ export default function Detail() {
         <FeatureImage><img src="/Cloud.jpeg"/></FeatureImage>
       </FeaturedArea>
       <DetailArea>
+        <DetailContent>
         <DetailTitle>Understanding the brief</DetailTitle>
-        <DetailDescription>A Super Follows subscription, is a chance for creators to connect even further with their biggest supporters, 
-          all while earning monthly revenue without leaving Twitter. Super Follow accounts can share extra content, feel free to be your 
-          real self, and easily identify and interact with fans. All for a monthly subscription of $2.99, $4.99, or $9.99 USD fit for 
-          their audience demographic, Super Followers would see Tweets posted just for them and be able to join subscriber-only conversations. 
-          Super follow accounts can then take home up to 97% of monthly subscription revenue after fees through Stripe. </DetailDescription>
-        <DetailGallery></DetailGallery>
+        <DetailDescription>Over 37,000 credit card rejections were reported by Navan users—business travelers 
+          who found their Navan business credit cards unusable due to company policies that only activate travel 
+          cards for trips involving flights or hotel bookings.
+
+</DetailDescription></DetailContent>
+<Infoshowcasecontainer>
+      <Infoshowcasetext>
+      <DetailTitle>Sugee: Loan Management System for Rural Sector.</DetailTitle>
+        <DetailDescription>Our field users have a supervisor assigned to 
+          them who is responsible for managing them.Our current app does not 
+          sufficiently cater to the needs of the supervisors.
+
+For instance they spend a lot of time on the field as well 
+and most do not have laptops making it difficult to 
+access the reporting which we have provided for them on the web-app.
+</DetailDescription>
+      </Infoshowcasetext>
+      <Infoshowcaseimage><img src="/Cloud.jpeg"/></Infoshowcaseimage>
+      </Infoshowcasecontainer>
+      <GalleryWrapper>   <ImageGallery images={images} /></GalleryWrapper>
+   
+      <DetailGallery></DetailGallery>
+       
       </DetailArea>
+
+  <FloatingButton>Go to Website </FloatingButton>
     </PageWrapper>
   );
 }
 
 const PageWrapper = styled.div`
 margin:0px auto;
+  background-color:#fefefe;
+
 `
 const Header = styled.div`
 padding:12px 160px 12px 160px;
@@ -47,14 +79,21 @@ height:50px;
 `
 const FeaturedArea = styled.div`
 padding:120px 160px 120px 160px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+
 
 `
-const FeatureTitle = styled.div`font-size:64px;
-font-type:bold;
-max-width:800px;`
-const FeatureDescription = styled.div`
+const FeatureTitle = styled.h1`
+
+max-width:800px;
+text-align:center;`
+const FeatureDescription = styled.p`
 max-width:600px;
-padding-top:24px;
+
+text-align:center;
 `
 
 const FeatureImage = styled.div`
@@ -66,17 +105,57 @@ img{
   object-fit: cover;
   }
 `
-const DetailArea = styled.div`padding:40px 160px 120px 160px;
+const DetailArea = styled.div`
+padding:40px 160px 120px 160px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+`
+const DetailContent = styled.div`
+  max-width: 960px; /* Sets a fixed width for the content */
+  width: 100%; /* Ensures the content spans the available width */
+`;
+const DetailTitle = styled.h2`
+
+
+  text-align: left;
 
 `
-const DetailTitle = styled.div`
-font-size:32px;
-font-type:bold;
-padding-bottom:24px;
-max-width:600px;
-`
-const DetailDescription = styled.div`
-max-width:600px;
+const DetailDescription = styled.p`
+  text-align: left;
+
 
 `
 const DetailGallery = styled.div``
+const Infoshowcasecontainer= styled.div`
+margin:24px 0 24px 0;
+border-radius:12px;
+background-color:#f6f5f7;
+padding:60px;
+ max-width: 960px;
+display:grid;
+gap:80px;
+grid-template-columns:auto auto;
+align-items:center;
+
+
+
+`
+const Infoshowcasetext = styled.div``
+const Infoshowcaseimage = styled.div`
+
+img{
+  width:400px;
+  height:480px;
+  border-radius:12px;
+  object-fit: cover;
+  }
+`
+const GalleryWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+`;

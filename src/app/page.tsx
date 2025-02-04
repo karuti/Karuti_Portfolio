@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <PageWrapper>
       <Header>
-        <HeaderLogoImg src="/SOIE SMALL LOGO WTH TXT MARK.svg" alt="Soie & Scale Logo"/>
+       <a href="https://karuti.co.ke/"> <HeaderLogoImg src="/kARUTI LOGO LIGHT.svg" alt="Karuti Logo"/></a>
       </Header>
       <HeroContent>
         <MainIntro>
@@ -17,13 +17,13 @@ export default function Home() {
           </MainIntro> 
           <SupportingIntro>Previously a product designer at FieldPro</SupportingIntro>
           <TagContainer>
-            <Chip>Product Management</Chip>
-            <Chip>Product Design</Chip>
+            <Chip> Open Resume</Chip>
+         
           </TagContainer>
           <HorizontaLine></HorizontaLine>
           <Peek>
 <BasedIn>Based in Nairobi Kenya</BasedIn>
-<Showcase><p>See selected works</p><img src="/Arrow Down Circle Icon 1Inverse.svg"/></Showcase>
+<Showcase><SelectedWorkTxt>See selected works</SelectedWorkTxt><img src="/Arrow Down Circle Icon 1Inverse.svg"/></Showcase>
           </Peek>
       </HeroContent>
      
@@ -60,10 +60,10 @@ export default function Home() {
      
      <Footer>
 <FooterCTA>
-<HeaderLogoImg src="/SOIE SMALL LOGO WTH TXT MARK.svg" alt="Soie & Scale Logo"/>
+<HeaderLogoImg src="/kARUTI LOGO LIGHT.svg" alt="Karuti Logo"/>
 
 </FooterCTA>
-<Copyright>Copyright© 2024 Soie & Scale. All Rights Reserved.</Copyright>
+<Copyright>Copyright© 2025 Karuti.co.ke All Rights Reserved.</Copyright>
      </Footer>
     </PageWrapper>
   );
@@ -80,8 +80,10 @@ position: sticky;
   background-color:#152314;
 `
 const HeaderLogoImg = styled.img`
-width:251px;
+width:auto;
 height:50px;
+padding:0;
+
 `
 const HeroContent = styled.div`
 
@@ -90,14 +92,16 @@ const HeroContent = styled.div`
 
 `
 const MainIntro= styled.p`
-font-size:64px;
-font-type:bold;
+font-size:52px;
+font-weight:regular;
 max-width:1080px;
+color:#F6F3E1;
 
 `
 const SupportingIntro= styled.p`
 font-size:24px;
-font-type:regular;
+ font-weight: 200;
+color:#F6F3E1;
 `
 const TagContainer = styled.div`
 display: flex;
@@ -120,10 +124,15 @@ display: flex;
   justify-content: space-between; 
   align-items: flex-start;
   margin:24px 0 ;
-
+color:#F6F3E1;
 `
 const BasedIn = styled.div`
+color:#F6F3E1;
 `
+const SelectedWorkTxt = styled.p`
+color:#F6F3E1;
+`
+
 const Showcase = styled.div`
   display: flex; 
   align-items: center; 
@@ -188,12 +197,13 @@ display: flex;
   align-items: flex-start;
 
   img{
-width:251px;
+width:auto;
 height:50px;
-object-fit: cover;
+
 
 }
 `
 const Copyright = styled.div`
 text-align:center;
+color:#F6F3E1;
 `
